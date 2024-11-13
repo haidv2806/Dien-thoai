@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Di động High-tech</title>
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./assets/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./assets/favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./assets/favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./assets/favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./assets/favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./assets/favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./assets/favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./assets/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./assets/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- Scripts -->
+    <script src="./assets/js/scripts.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include("./templates/header.ejs") %>
+    <!-- MAIN -->
+    <main class="checkout-page">
+      <div class="container">
+        <!-- Search bar -->
+        <div class="checkout-container">
+          <div class="search-bar d-none d-md-flex">
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Search for item"
+              class="search-bar__input"
+            />
+            <button class="search-bar__submit">
+              <img
+                src="./assets/icons/search.svg"
+                alt=""
+                class="search-bar__icon icon"
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- Breadcrumbs -->
+        <div class="checkout-container">
+          <ul class="breadcrumbs checkout-page__breadcrumbs">
+            <li>
+              <a href="/" class="breadcrumbs__link">
+                Trang chủ
+                <img src="./assets/icons/arrow-right.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="/checkout" class="breadcrumbs__link">
+                Thanh toán
+                <img src="./assets/icons/arrow-right.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="/delivery" class="breadcrumbs__link">
+                Vận chuyển
+                <img src="./assets/icons/arrow-right.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="#!" class="breadcrumbs__link breadcrumbs__link--current"
+                >Phương thức thanh toán</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Checkout content -->
+        <div class="checkout-container">
+          <div class="row gy-xl-3">
+            <div class="col-8 col-xl-8 col-lg-12">
+              <div class="cart-info">
+                <div class="cart-info__top">
+                  <h2 class="cart-info__heading cart-info__heading--lv2">
+                    1. Đơn hàng sẽ được vận chuyển đến bạn sau 2-3 ngày kể từ
+                    khi thanh toán thành công
+                  </h2>
+                  <a class="cart-info__edit-btn" href="/delivery">
+                    <img class="icon" src="./assets/icons/edit.svg" alt="" />
+                    Edit
+                  </a>
+                </div>
+
+                <!-- Payment item 1 -->
+                <article class="payment-item">
+                  <div class="payment-item__info">
+                    <h3 class="payment-item__title"><%= name[0] %></h3>
+                    <p class="payment-item__desc">
+                      <%= district_address[0] %>
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Payment item 2 -->
+                <article class="payment-item">
+                  <div class="payment-item__info">
+                    <h3 class="payment-item__title">Thông tin đơn hàng</h3>
+                    <p class="payment-item__desc"><%= fav_product_id.length %> sản phẩm</p>
+                  </div>
+                  <a href="/checkout" class="payment-item__detail">Xem</a>
+                </article>
+              </div>
+
+              <div class="cart-info">
+                <h2 class="cart-info__heading cart-info__heading--lv2">
+                  2. Phương thức vận chuyển
+                </h2>
+                <div class="cart-info__separate"></div>
+                <h3 class="cart-info__sub-heading">
+                  Khả dụng
+                </h3>
+
+                <!-- Payment item 3 -->
+                <label>
+                  <article class="payment-item payment-item--pointer">
+                    <img
+                      src="./assets/img/payment/delivery-1.png"
+                      alt=""
+                      class="payment-item__thumb"
+                    />
+                    <div class="payment-item__content">
+                      <div class="payment-item__info">
+                        <h3 class="payment-item__title">Thường</h3>
+                        <p class="payment-item__desc payment-item__desc--low">
+                          Nhận hàng sau 2-3 ngày
+                        </p>
+                      </div>
+
+                      <span class="cart-info__checkbox payment-item__checkbox">
+                        <input
+                          type="radio"
+                          name="delivery-method"
+                          checked
+                          class="cart-info__checkbox-input payment-item__checkbox-input"
+                        />
+                        <span class="payment-item__cost">Miễn phí</span>
+                      </span>
+                    </div>
+                  </article>
+                </label>
+
+                <!-- Payment item 4 -->
+                <label>
+                  <article class="payment-item payment-item--pointer">
+                    <img
+                      src="./assets/img/payment/delivery-2.png"
+                      alt=""
+                      class="payment-item__thumb"
+                    />
+                    <div class="payment-item__content">
+                      <div class="payment-item__info">
+                        <h3 class="payment-item__title">Hoả tốc</h3>
+                        <p class="payment-item__desc payment-item__desc--low">
+                          Nhận hàng trong ngày
+                        </p>
+                      </div>
+
+                      <span class="cart-info__checkbox payment-item__checkbox">
+                        <input
+                          type="radio"
+                          name="delivery-method"
+                          class="cart-info__checkbox-input payment-item__checkbox-input"
+                        />
+                        <span class="payment-item__cost">$12.00</span>
+                      </span>
+                    </div>
+                  </article>
+                </label>
+              </div>
+            </div>
+            <div class="col-4 col-xl-4 col-lg-12">
+              <div class="cart-info">
+                <h2 class="cart-info__heading cart-info__heading--lv2">
+                  Thông tin thanh toán
+                </h2>
+                <p class="cart-info__desc">
+                  Hoàn thành đơn hàng của bạn
+                </p>
+                <form action="" class="form cart-info__form">
+                  <div class="form__group">
+                    <label for="email" class="form__label form__label--medium"
+                      >Email</label
+                    >
+                    <div class="form__text-input">
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Email"
+                        class="form__input"
+                        required
+                      />
+                      <img
+                        src="./assets/icons/form-error.svg"
+                        alt=""
+                        class="form__input-icon-error"
+                      />
+                    </div>
+                    <p class="form__error">
+                      Email chưa đúng định dạng (username@email.com)
+                    </p>
+                  </div>
+                  <div class="form__group">
+                    <label
+                      for="card-holder"
+                      class="form__label form__label--medium"
+                    >
+                      Card Holder
+                    </label>
+                    <div class="form__text-input">
+                      <input
+                        type="text"
+                        name="card-holder"
+                        id="card-holder"
+                        placeholder="Card Holder"
+                        class="form__input"
+                        required
+                      />
+                      <img
+                        src="./assets/icons/form-error.svg"
+                        alt=""
+                        class="form__input-icon-error"
+                      />
+                    </div>
+                    <p class="form__error">
+                      Email chưa đúng định dạng (username@email.com)
+                    </p>
+                  </div>
+                  <div class="form__group">
+                    <label
+                      for="card-details"
+                      class="form__label form__label--medium"
+                    >
+                      Card Details
+                    </label>
+                    <div class="form__text-input">
+                      <input
+                        type="text"
+                        name="card-details"
+                        id="card-details"
+                        placeholder="Card Details"
+                        class="form__input"
+                        required
+                      />
+                      <img
+                        src="./assets/icons/form-error.svg"
+                        alt=""
+                        class="form__input-icon-error"
+                      />
+                    </div>
+                    <p class="form__error">
+                      Password must be at least 6 characters
+                    </p>
+                  </div>
+                  <div class="form__row cart-info__form-row">
+                    <div class="form__group">
+                      <div class="form__text-input">
+                        <input
+                          type="text"
+                          name="card-expire"
+                          id="card-expire"
+                          placeholder="MM/YY"
+                          class="form__input"
+                          required
+                        />
+                        <img
+                          src="./assets/icons/form-error.svg"
+                          alt=""
+                          class="form__input-icon-error"
+                        />
+                      </div>
+                      <p class="form__error">
+                        Password must be at least 6 characters
+                      </p>
+                    </div>
+                    <div class="form__group">
+                      <div class="form__text-input">
+                        <input
+                          type="text"
+                          name="card-cvc"
+                          id="card-cvc"
+                          placeholder="CVC"
+                          class="form__input"
+                          required
+                        />
+                        <img
+                          src="./assets/icons/form-error.svg"
+                          alt=""
+                          class="form__input-icon-error"
+                        />
+                      </div>
+                      <p class="form__error">
+                        Password must be at least 6 characters
+                      </p>
+                    </div>
+                  </div>
+                </form>
+                <div class="cart-info__row">
+                  <span
+                    >Số lượng
+                    <span class="cart-info__sub-label">(sản phấm)</span></span
+                  >
+                  <span><%= tong %></span>
+                </div>
+                <div class="cart-info__row">
+                  <span
+                    >Tổng
+                    <span class="cart-info__sub-label">(Ước tính)</span></span
+                  >
+                  <span><%= totalamount %></span>
+                </div>
+                <div class="cart-info__row">
+                  <span>Phí vận chuyển</span>
+                  <span>0.00</span>
+                </div>
+                <div class="cart-info__separate"></div>
+                <div class="cart-info__row">
+                  <span>Tất toán</span>
+                  <span><%= totalamount %></span> 
+                </div>
+                <a
+                  href="send_email"
+                  class="cart-info__next-btn btn btn--primary btn--rounded"
+                  >Thanh toán <%= price %></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include("./templates/footer.ejs") %>
+
+  </body>
+</html>
